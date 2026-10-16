@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LE BLANC | {{ perfume.name }}</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@300;400;600&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Top Luxury Ribbon -->
+    <div class="top-announcement-bar">
+        <span>✦ LE BLANC FRAGRANCES ✦ ORIGINAL BRAND 100% ✦</span>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="header">
+        <div class="logo">
+            <a href="{% url 'home' %}"><img src="{% static 'logo.PNG' %}" alt="LE BLANC Logo"></a>
+        </div>
+        
+        <nav class="nav-links">
+            <a href="{% url 'home' %}">← ត្រឡប់ទៅទំព័រដើម</a>
+            <a href="{% url 'home' %}#collection">ម៉ឺនុយ</a>
+            <a href="{% url 'home' %}#about">អំពីយើង</a>
+        </nav>
+
+        <div class="header-right">
+            <a href="https://t.me/Leblancr26" target="_blank" class="telegram-nav-link" rel="noopener">
+                <span>ឆាត Telegram</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Product Detail Layout -->
+    <main class="product-detail-page">
+        <div class="product-detail-container">
+            <!-- Left: Bottle Photo -->
+            <div class="product-detail-media">
+                <img src="{{ perfume.image.url }}" alt="{{ perfume.name }}">
+            </div>
+
+            <!-- Right: Product Specifications -->
+            <div class="product-detail-info">
+                <span class="p-brand-badge">✦ ORIGINAL STORE IMPORT • {{ perfume.brand|upper }} ✦</span>
+                <h1>{{ perfume.name }}</h1>
+                <div class="p-price">${{ perfume.price }}</div>
+                <div class="p-divider">༺ ❖ ༻</div>
+                
+                <p class="p-summary">{{ perfume.description }}</p>
+                
+                <div class="p-specifications">
+                    <div class="p-spec-item">
+                        <strong>ប្រភេទក្លិន (Scent Family):</strong>
+                        <span>{{ perfume.scent_family }}</span>
+                    </div>
+                    <div class="p-spec-item">
+                        <strong>ស្រទាប់ក្លិនដំបូង (Top Notes):</strong>
+                        <span>{{ perfume.top_notes }}</span>
+                    </div>
+                    <div class="p-spec-item">
+                        <strong>ស្រទាប់ក្លិនគោល (Base Notes):</strong>
+                        <span>{{ perfume.base_notes }}</span>
+                    </div>
+                    <div class="p-spec-item">
+                        <strong>កម្រិតជាប់ក្លិន (Longevity):</strong>
+                        <span>{{ perfume.longevity }}</span>
+                    </div>
+                    <div class="p-spec-item">
+                        <strong>ស្ថានភាពស្តុក:</strong>
+                        <span>{% if perfume.in_stock %}មានក្នុងស្តុក (In Stock){% else %}អស់ពីស្តុក (Out of Stock){% endif %}</span>
+                    </div>
+                </div>
+
+                <a href="https://t.me/Leblancr26?text={{ 'សួស្តី LE BLANC! ខ្ញុំចង់កុម្ម៉ង់ ឬសាកសួរពីទឹកអប់៖ '|urlencode }}{{ perfume.name|urlencode }}" 
+                   target="_blank" 
+                   class="p-direct-btn" 
+                   rel="noopener">
+                    <span>ផ្ញើសារកុម្ម៉ង់លើ Telegram ឥឡូវនេះ</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.56 8.16l-1.92 9.07c-.14.65-.53.81-1.07.5l-2.97-2.19-1.43 1.38c-.16.16-.29.29-.6.29l.21-3.04 5.54-5.01c.24-.22-.05-.34-.37-.13l-6.85 4.31-2.95-.92

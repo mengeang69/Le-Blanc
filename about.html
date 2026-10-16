@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LE BLANC | អំពីយើង - Our Story</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@300;400;600&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Top Luxury Ribbon -->
+    <div class="top-announcement-bar">
+        <span>✦ LE BLANC FRAGRANCES ✦ ORIGINAL BRAND 100% ✦</span>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="header">
+        <div class="logo">
+            <a href="{% url 'home' %}"><img src="{% static 'logo.PNG' %}" alt="LE BLANC Logo"></a>
+        </div>
+        
+        <nav class="nav-links">
+            <a href="{% url 'home' %}">ទំព័រដើម</a>
+            <a href="{% url 'home' %}#collection">ម៉ឺនុយ</a>
+            <a href="{% url 'about' %}" style="color: #C5A059;">អំពីយើង</a>
+            <a href="#contact">ទំនាក់ទំនង</a>
+        </nav>
+
+        <div class="header-right">
+            <a href="https://t.me/Leblancr26" target="_blank" class="telegram-nav-link" rel="noopener">
+                <span>ឆាត Telegram</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Dedicated About Section -->
+    <main class="about-section" style="min-height: 75vh; display: flex; align-items: center;">
+        <div class="about-container">
+            <div class="about-image-wrapper">
+                <img src="{% static 'logo.PNG' %}" alt="LE BLANC Perfume Story" class="about-logo-badge">
+            </div>
+            <div class="about-content">
+                <span class="about-tag">រឿងរ៉ាវរបស់យើង • OUR STORY</span>
+                <h2>ក្លិនក្រអូបជាមួយ​ Le Blanc</h2>
+                <div class="about-divider">༺ ❖ ༻</div>
+                <p>
+                    <strong>LE BLANC</strong> ផ្តល់ជូននូវបណ្តុំទឹកអប់ប្រណិតលំដាប់អន្តរជាតិ ដែលត្រូវបានជ្រើសរើសយ៉ាងសម្រិតសម្រាំង និងនាំចូលដោយផ្ទាល់ពី Brand Stores ដើម។ យើងឈរលើគោលការណ៍គុណភាព និងភាពស្មោះត្រង់ ដើម្បីធានាថាគ្រប់ដបដែលអ្នកទទួលបាន គឺជាផលិតផលសុទ្ធពិតប្រាកដ ១០០% ជាមួយនឹងតម្លៃដ៏សមរម្យ។
+                </p>
+                <div class="about-highlights">
+                    <div class="highlight-item">
+                        <span class="highlight-icon">✦</span>
+                        <div>
+                            <h4>ធានានូវតម្លៃ និង គុណភាព</h4>
+                            <p>ធានាផលិតផលសុទ្ធ ១០០% នាំចូលដោយផ្ទាល់ ជាមួយតម្លៃដ៏សមរម្យបំផុត</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">✦</span>
+                        <div>
+                            <h4>ទំនុកចិត្ត & ភាពស្មោះត្រង់</h4>
+                            <p>ផ្តល់ជូននូវការធានាលើគុណភាពពិតប្រាកដ និងសេវាកម្មរហ័សទាន់ចិត្តជូនអតិថិជន</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p>&copy; 2026 LE BLANC Fragrances. រក្សាសិទ្ធិគ្រប់យ៉ាង។</p>
+    </footer>
+
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>
